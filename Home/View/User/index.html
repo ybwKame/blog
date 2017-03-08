@@ -1,0 +1,129 @@
+<include file="Public/head" />
+<import type="css" file="css.User.user" />
+<import type="js" file="js.User.user" />
+</head>
+<body>
+	<!-- 标题 -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Hello,World.</h1>
+			<p>Hello,Myself.</p>
+		</div>
+	</div>
+
+	<!-- 导航栏 -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">导航</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">日志</a></li>
+					<li><a href="#">留言</a></li>
+					<li><a href="#">关于</a></li>
+				</ul>
+				<form class="navbar-form navbar-left pull-right">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Search now</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 栅格系统 -->
+	<div class="container-fluid container">
+
+		<div class="row">
+			<div class="col-md-9">
+				<!-- 第一篇文章 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">第一篇日志</h3>
+					</div>
+					<div class="panel-body">
+						这是我的第一篇日志
+					</div>
+					<div class="panel-footer text-right">
+						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
+							<a class="panela" href="#">随笔</a>
+						</span>
+						<span class="glyphicon glyphicon-tags" aria-hidden="true">
+							<a class="panela" href="#">第一篇日志</a>
+						</span>
+						<span class="glyphicon glyphicon-comment" aria-hidden="true">
+							<a class="panela" href="#">评论</a>
+						</span>
+						author:kame
+					</div>
+				</div>
+		
+				<!-- 第二篇文章 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">第二篇日志</h3>
+					</div>
+					<div class="panel-body">
+						这是我的第二篇日志
+					</div>
+					<div class="panel-footer text-right">
+						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
+							<a class="panela" href="#">随笔</a>
+						</span>
+						<span class="glyphicon glyphicon-tags" aria-hidden="true">
+							<a class="panela" href="#">第二篇日志</a>
+						</span>
+						<span class="glyphicon glyphicon-comment" aria-hidden="true">
+							<a class="panela" href="#">评论</a>
+						</span>
+						author:kame
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<!-- 栏目分类 -->
+				<div class="list-group">
+					<a href="#" class="list-group-item active">
+						所有分类<span class="badge">20</span>
+					</a>
+					<a class="list-group-item">随笔</a>
+					<a href="#" class="list-group-item">PHP学习</a>
+					<a href="#" class="list-group-item">前端知识</a>
+				</div>
+				<!-- 最新文章 -->
+				<div class="list-group">
+					<a href="#" class="list-group-item active">
+						最新文章
+					</a>
+					<a href="#" class="list-group-item">PHP的学习之道</a>
+					<a href="#" class="list-group-item">日志</a>
+					<a href="#" class="list-group-item">我不知道写啥</a>
+				</div>
+				<!-- 最新评论 -->
+				<div class="list-group">
+					<button class="list-group-item active">最新评论</button>
+					<div class="list-group-item">
+						<img src="...">&nbsp;kame在<a href="#">日志</a>中评论：
+						<div class="alert alert-warning" role="alert">欢迎来搞</div>
+					</div>
+					<div class="list-group-item">
+						<img src=".">&nbsp;kame在<a href="#">日志</a>中评论：
+						<div class="alert alert-warning" role="alert">欢迎来搞</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
