@@ -20,3 +20,7 @@
 .alert{
 	margin-bottom: 5px;
 }
+
+.panel-body img{
+	max-width: 800px;
+}
