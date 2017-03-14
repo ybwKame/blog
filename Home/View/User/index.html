@@ -46,70 +46,30 @@
 		<div class="row">
 			<div class="col-md-9">
 				<!-- 第一篇文章 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">第一篇日志</h3>
+				<foreach name="data" item="b">
+					<div class="panel panel-default">
+						
+						<div class="panel-heading">
+							<h3 class="panel-title">{$b.title}</h3>
+						</div>
+						<div class="panel-body">
+							{$b.content}
+						</div>
+						<div class="panel-footer text-right">
+							<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
+								<a class="panela" href="#">{$b.category}</a>
+							</span>
+							<span class="glyphicon glyphicon-tags" aria-hidden="true">
+								<a class="panela" href="#">{$b.label}</a>
+							</span>
+							<span class="glyphicon glyphicon-comment" aria-hidden="true">
+								<a class="panela" href="#">评论</a>
+							</span>
+							author:kame
+						</div>
+						
 					</div>
-					<div class="panel-body">
-						这是我的第一篇日志
-					</div>
-					<div class="panel-footer text-right">
-						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
-							<a class="panela" href="#">随笔</a>
-						</span>
-						<span class="glyphicon glyphicon-tags" aria-hidden="true">
-							<a class="panela" href="#">第一篇日志</a>
-						</span>
-						<span class="glyphicon glyphicon-comment" aria-hidden="true">
-							<a class="panela" href="#">评论</a>
-						</span>
-						author:kame
-					</div>
-				</div>
-		
-				<!-- 第二篇文章 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">第二篇日志</h3>
-					</div>
-					<div class="panel-body">
-						这是我的第二篇日志
-					</div>
-					<div class="panel-footer text-right">
-						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
-							<a class="panela" href="#">随笔</a>
-						</span>
-						<span class="glyphicon glyphicon-tags" aria-hidden="true">
-							<a class="panela" href="#">第二篇日志</a>
-						</span>
-						<span class="glyphicon glyphicon-comment" aria-hidden="true">
-							<a class="panela" href="#">评论</a>
-						</span>
-						author:kame
-					</div>
-				</div>
-
-				<!-- 第三篇文章 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">今天心情很好</h3>
-					</div>
-					<div class="panel-body">
-						开发速度提升了4倍以上！！！！
-					</div>
-					<div class="panel-footer text-right">
-						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
-							<a class="panela" href="#">PHP开发</a>
-						</span>
-						<span class="glyphicon glyphicon-tags" aria-hidden="true">
-							<a class="panela" href="#">开发速度</a>
-						</span>
-						<span class="glyphicon glyphicon-comment" aria-hidden="true">
-							<a class="panela" href="#">评论</a>
-						</span>
-						author:kame
-					</div>
-				</div>
+				</foreach>
 			</div>
 
 			<div class="col-md-3">
