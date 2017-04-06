@@ -4,7 +4,7 @@
 <div class="row">
 		<div class="col-md-9">
 
-			<div class="panel panel-default art">
+			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3>留言板</h3>
 				</div>
@@ -13,60 +13,15 @@
 				</div>
 			</div>
 
-			<div class="art">
-				<form enctype="multipart/form-data" action="{:U('Home/User/liuyan')}" method="post">
-					<script id="content" type="text/plain" name="content"></script>
-					<script type="text/javascript">
-						var ue = UE.getEditor("content",{
-							toolbars: [[
-				            'fullscreen', 'source', '|',
-				            'undo', 'redo', '|',
-				            'bold', 'italic', 'underline', 'forecolor','|',
-				            'fontfamily', 'fontsize', '|',
-				            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 
-				            'emotion', 'scrawl'
-				        ]],initialFrameWidth:700,initialFrameHeight:200
-				        });
-					</script>
-					<button type="submit" class="btn btn-danger" id='liuyan'>留言</button>
-				</form>
-			</div>
-
-			<div class="panel panel-default art">
-				<div class="panel-body">
-					<ul class="media-list">
-						<li class="media">
-							<div class="media-left">
-								<a href="#">
-									<img class="media-object" src="{$Think.session.touxiang}" />
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">{$Think.session.user_name}</h4>
-							沙发~~~~
-							</div>
-
-							<ul>
-								<li class="media">
-									<div class="media-left">
-										<a href="#">
-											<img class="media-object" src="{$Think.session.touxiang}" />
-										</a>
-									</div>
-									<div class="media-body">
-										<h4 class="media-heading">{$Think.session.user_name}</h4>
-										墙上发~
-									</div>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="panel-footer text-right">
-					顶[1]&nbsp;踩[0]&nbsp;回复
-				</div>
-			</div>
-		</div>
+			
+			<div id="SOHUCS" sid="<?php echo md5($_SERVER['PATH_INFO']); ?>"></div>
+			<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+			<script type="text/javascript">
+			window.changyan.api.config({
+			appid: 'cysVR682P',
+			conf: '51adf3e2e13f96901ab93e7776f195c4'
+			});
+			</script>
 
 		<include file="Public/right" />
 	</div>
