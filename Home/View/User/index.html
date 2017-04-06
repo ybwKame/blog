@@ -1,105 +1,42 @@
 <include file="Public/head" />
-<import type="css" file="css.User.user" />
-<import type="js" file="js.User.user" />
-</head>
-<body>
-	<!-- 标题 -->
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Hello,World.</h1>
-			<p>Hello,Myself.</p>
+
+<!-- 栅格系统 -->
+<div class="container-fluid container">
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- {:print_r($blogs)} -->
+			<foreach name="blogs" item="b">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="{:U('Home/Article/view',array('id'=>$b[id]))}"><h3 class="panel-title">{$b.title}</h3></a>
+					</div>
+					<div class="panel-body">
+						{$b[content]|html_entity_decode}
+					</div>
+					<div class="panel-footer text-right">
+						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
+							<foreach name="cate" item="c">
+								<if condition="$c['id'] eq $b['category']">
+									<a class="panela" href="#">{$c[cate_name]}</a>
+								</if>
+							</foreach>
+						</span>
+						<span class="glyphicon glyphicon-tags" aria-hidden="true">
+							<a class="panela" href="#">{$b.label}</a>
+						</span>
+						<span class="glyphicon glyphicon-comment" aria-hidden="true">
+							<a class="panela" href="#">{$b[comment_num]}条评论</a>
+						</span>
+						author:&nbsp;<strong>kame</strong>&nbsp;
+						发布时间:&nbsp;{$b[add_time]|date="Y-m-d H:i:s",###}
+					</div>
+				</div>
+
+			</foreach>
+			{$pager}
 		</div>
+
+		<include file="Public/right" />
 	</div>
-
-	<!-- 导航栏 -->
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">导航</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">日志</a></li>
-					<li><a href="#">留言</a></li>
-					<li><a href="#">关于</a></li>
-				</ul>
-				<form class="navbar-form navbar-left pull-right">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Search now</button>
-				</form>
-			</div>
-		</div>
-	</nav>
-
-	<!-- 栅格系统 -->
-	<div class="container-fluid container">
-
-		<div class="row">
-			<div class="col-md-9">
-				<!-- {:print_r($data)} -->
-				<foreach name="data" item="b">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">{$b.title}</h3>
-						</div>
-						<div class="panel-body">
-							{$b.content}
-						</div>
-						<div class="panel-footer text-right">
-							<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
-								<a class="panela" href="#">{$b.category}</a>
-							</span>
-							<span class="glyphicon glyphicon-tags" aria-hidden="true">
-								<a class="panela" href="#">{$b.label}</a>
-							</span>
-							<span class="glyphicon glyphicon-comment" aria-hidden="true">
-								<a class="panela" href="#">评论</a>
-							</span>
-							author:&nbsp;<strong>kame</strong>&nbsp;
-							发布时间:&nbsp;{$b.add_time}
-						</div>
-					</div>
-
-				</foreach>
-			</div>
-
-			<div class="col-md-3">
-				<!-- 栏目分类 -->
-				<div class="list-group">
-					<a href="#" class="list-group-item active">
-						所有分类<span class="badge">20</span>
-					</a>
-					<a class="list-group-item">随笔</a>
-					<a href="#" class="list-group-item">PHP学习</a>
-					<a href="#" class="list-group-item">前端知识</a>
-				</div>
-				<!-- 最新文章 -->
-				<div class="list-group">
-					<a href="#" class="list-group-item active">
-						最新文章
-					</a>
-					<a href="#" class="list-group-item">PHP的学习之道</a>
-					<a href="#" class="list-group-item">日志</a>
-					<a href="#" class="list-group-item">我不知道写啥</a>
-				</div>
-				<!-- 最新评论 -->
-				<div class="list-group">
-					<button class="list-group-item active">最新评论</button>
-					<div class="list-group-item">
-						<img src="...">&nbsp;kame在<a href="#">日志</a>中评论：
-						<div class="alert alert-warning" role="alert">欢迎来搞</div>
-					</div>
-					<div class="list-group-item">
-						<img src=".">&nbsp;kame在<a href="#">日志</a>中评论：
-						<div class="alert alert-warning" role="alert">欢迎来搞</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</body>
-</html>
+</div>

@@ -1,0 +1,63 @@
+<include file="Public/head" />
+
+<!-- 栅格系统 -->
+<div class="container-fluid container">
+
+	<div class="row">
+		<div class="col-md-9">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{$blog.title}</h3>
+				</div>
+				<div class="panel-body">
+					<div class="text-right">
+						<span class="glyphicon glyphicon-folder-open" aria-hidden="true">
+							<a class="panela" href="#">{$cate[cate_name]}</a>
+						</span>
+						<span class="glyphicon glyphicon-tags" aria-hidden="true">
+							<a class="panela" href="#">{$blog[label]}</a>
+						</span>
+						<span class="glyphicon glyphicon-comment" aria-hidden="true">
+							<a class="panela" href="#">{$blog[comment_num]}条评论</a>
+						</span>
+						author:&nbsp;<strong>{$blog[author]}</strong>&nbsp;
+						发布时间:&nbsp;{$blog[add_time]|date="Y-m-d H:i:s",###}
+					</div>
+					{$blog[content]|html_entity_decode}
+				</div>
+			</div>
+
+			<!-- 评论区 -->
+			<!-- <form enctype="multipart/form-data" action="{:U('Home/Article/comment')}" method="post">
+				<script id="content" type="text/plain" name="content"></script>
+				<script type="text/javascript">
+					var ue = UE.getEditor("content",{
+						toolbars: [[
+			            'fullscreen', 'source', '|',
+			            'undo', 'redo', '|',
+			            'bold', 'italic', 'underline', 'forecolor','|',
+			            'fontfamily', 'fontsize', '|',
+			            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 
+			            'emotion', 'scrawl'
+			        ]],initialFrameWidth:700,initialFrameHeight:200
+			        });
+				</script>
+				<input type="hidden" name="blog_id" value="<?php echo substr($_SERVER['PATH_INFO'],-1,1); ?>">
+				<button type="submit" class="btn btn-danger" id='comment'>发表评论</button>
+			</form> -->
+			<!--PC版-->
+			<div id="SOHUCS" sid="<?php echo md5($_SERVER['PATH_INFO']); ?>"></div>
+			<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+			<script type="text/javascript">
+			window.changyan.api.config({
+			appid: 'cysVR682P',
+			conf: '51adf3e2e13f96901ab93e7776f195c4'
+			});
+			</script>
+
+		</div>
+
+		<include file="Public/right" />
+	</div>
+</div>

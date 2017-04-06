@@ -1,0 +1,28 @@
+<div class="col-md-3">
+	<!-- 栏目分类 -->
+	<div class="list-group">
+		<a href="#" class="list-group-item active">所有分类</a>
+		<?php foreach(session('cate') as $c) { ?>
+			<a href="{:U('Home/Article/list',array('id'=>$c['id']))}" class="list-group-item">{$c[cate_name]}<span class="badge">{$c[text_num]}</span></a>
+		<?php }?>
+	</div>
+	<!-- 最新文章 -->
+	<div class="list-group">
+		<a href="#" class="list-group-item active">
+			最新文章
+		</a>
+		<?php foreach(session('new_blogs') as $b) { ?>
+			<a href="{:U('Home/Article/view',array('id'=>$b['id']))}" class="list-group-item">{$b[title]}</a>
+		<?php }?>
+	</div>
+	<!-- 最新评论 -->
+	<div class="list-group">
+		<button class="list-group-item active">最新评论</button>
+		<?php foreach(session('comment') as $c) {?>
+			<div class="list-group-item">
+				<img src="...">&nbsp;{$c[user_id]}在<a href="#">{$c[blog_id]}</a>中评论：
+				<div class="alert alert-warning" role="alert">{$c[content]}</div>
+			</div>
+		<?php }?>
+	</div>
+</div>

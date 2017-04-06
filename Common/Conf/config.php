@@ -8,4 +8,5 @@ return array(
     'DB_USER'               =>  'root',      // 用户名
     'DB_PWD'                =>  '111111',          // 密码
     'DB_PORT'               =>  '3306',        // 端口
+    'DB_DSN'                =>  'mysql:host=localhost;dbname=blog;charset=utf8',
 );
