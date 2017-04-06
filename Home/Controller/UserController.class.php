@@ -50,6 +50,7 @@ class UserController extends Controller{
 			S('cate',$cate,3600);
 			
 		}
+		$this->assign('cate',$cate);
 		session('cate',$cate);
 
 		// 最新评论
