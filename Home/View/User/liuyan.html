@@ -1,28 +1,30 @@
 <include file="Public/head" />
 <div class="container-fluid container">
 
-<div class="row">
-		<div class="col-md-9">
+	<div class="row">
+			<div class="col-md-9">
 
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3>留言板</h3>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3>留言板</h3>
+					</div>
+					<div class="panel-body">
+						<p>&nbsp;&nbsp;欢迎大家留言！</p>
+					</div>
 				</div>
-				<div class="panel-body">
-					<p>&nbsp;&nbsp;欢迎大家留言！</p>
-				</div>
-			</div>
+
+				
+				<div id="SOHUCS" sid="<?php echo md5($_SERVER['PATH_INFO']); ?>"></div>
+				<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+				<script type="text/javascript">
+				window.changyan.api.config({
+				appid: 'cysVR682P',
+				conf: '51adf3e2e13f96901ab93e7776f195c4'
+				});
+				</script>
 
 			
-			<div id="SOHUCS" sid="<?php echo md5($_SERVER['PATH_INFO']); ?>"></div>
-			<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
-			<script type="text/javascript">
-			window.changyan.api.config({
-			appid: 'cysVR682P',
-			conf: '51adf3e2e13f96901ab93e7776f195c4'
-			});
-			</script>
-
+		</div>
 		<include file="Public/right" />
 	</div>
 </div>
